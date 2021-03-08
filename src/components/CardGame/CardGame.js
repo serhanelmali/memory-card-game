@@ -39,7 +39,7 @@ function CardGame() {
   const [shuffledCards, setShuffledCards] = useState([]);
   const [matchedCards, setMatchedCards] = useState([]);
   const [flippedCards, setFlippedCards] = useState([]);
-  const [score, setScore] = useState([1]);
+  const [score, setScore] = useState([20]);
   const location = useLocation();
 
   //Shuffles Cards.

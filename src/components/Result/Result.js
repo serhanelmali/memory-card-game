@@ -1,9 +1,10 @@
-import React, { Component } from "react";
-import { withRouter } from "react-router-dom";
-class Result extends Component {
-  render() {
-    return <div>result</div>;
-  }
+import React from "react";
+import { useLocation } from "react-router-dom";
+
+function Result(props) {
+  const location = useLocation();
+
+  return <h1>{location.state.score}</h1>;
 }
 
-export default withRouter(Result);
+export default Result;

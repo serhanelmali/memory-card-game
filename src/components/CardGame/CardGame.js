@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { withRouter, Redirect, useHistory } from "react-router-dom";
 import Card from "../Card/Card";
-import Result from "./../Result/Result";
+import { Redirect, useHistory } from "react-router-dom";
 import "./CardGame.scss";
 
 import { shuffle } from "lodash";
@@ -16,6 +15,8 @@ import thad from "./../../assets/thad.png";
 import tweek from "./../../assets/tweek.png";
 
 function CardGame() {
+  const history = useHistory();
+
   const [cards] = useState([
     { name: "cartman", open: false, id: 1, image: cartman, isMatched: false },
     { name: "clyde", open: false, id: 2, image: clyde, isMatched: false },
@@ -37,8 +38,7 @@ function CardGame() {
   const [shuffledCards, setShuffledCards] = useState([]);
   const [matchedCards, setMatchedCards] = useState([]);
   const [flippedCards, setFlippedCards] = useState([]);
-  const [score, setScore] = useState([15]);
-  const history = useHistory();
+  const [score, setScore] = useState([20]);
 
   //Shuffles Cards.
   useEffect(() => setShuffledCards(shuffle(cards)), []);
@@ -71,15 +71,27 @@ function CardGame() {
 
   //Controls score to finish game
 
+  // if (this.state.matchedCards.length === 16 || this.state.score === 0) {
+  //   const newTo = {
+  //     pathname: "",
+  //     userName: this.props.location.userName,
+  //     score: this.state.score,
+  //   };
+  //   this.state.matchedCards.length === 16
+  //     ? (newTo.pathname = "/result")
+  //     : (newTo.pathname = "/result");
+  //   return <Redirect to={newTo} />;
+  // }
+
   useEffect(() => {
     if (score === 0) {
-      history.push("/result");
+      return history.push({ pathname: "/result", state: { score: score } });
     }
   }, [score]);
 
   useEffect(() => {
     if (matchedCards.length === 16) {
-      history.push("/result");
+      return history.push({ pathname: "/result", state: { score: score } });
     }
   }, [matchedCards]);
 
@@ -99,4 +111,4 @@ function CardGame() {
   );
 }
 
-export default withRouter(CardGame);
+export default CardGame;

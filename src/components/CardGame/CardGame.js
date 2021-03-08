@@ -43,43 +43,35 @@ function CardGame() {
     if (flippedCards.length > 1) {
       if (flippedCards[0].name === flippedCards[1].name) {
         setMatchedCards([...matchedCards, flippedCards[0], flippedCards[1]]);
-        console.log(matchedCards);
       } else {
-        console.log("else");
+        setTimeout(() => {
+          let transferCards = shuffledCards;
+          transferCards.find(
+            (item) => item.id === flippedCards[0].id
+          ).open = false;
+          transferCards.find(
+            (item) => item.id === flippedCards[1].id
+          ).open = false;
+        });
+        setScore(score - 1);
       }
-
       setTimeout(() => {
         setFlippedCards([]);
       }, 1000);
     }
   }, [flippedCards]);
 
-  // useEffect(() => {
-
-  //   // if (flippedCards.length > 1) {
-  //   //   if (flippedCards[0].name === flippedCards[1].name) {
-  //   //     setMatchedCards([...matchedCards, flippedCards[0], flippedCards[1]]);
-  //   //     console.log(flippedCards[0].name + flippedCards[1].name)
-
-  // //     } else {
-  // //       let deneme = shuffledCards;
-  // //       console.log(deneme.find((item) => item.id === flippedCards[0].id));
-  // //     }
-  // //     setTimeout(() => {
-  // //       setFlippedCards([]);
-  // //     }, 1000);
-  // //   }
-  // // }, [flippedCards]);
+  useEffect(() => {}, [score]);
 
   return (
     <div className="card-container">
       {shuffledCards.map((character, index) => (
         <Card
           key={index}
-          onClickHandler={
-            (() => setFlippedCards([...flippedCards, { ...character }]),
-            (character.open = true))
-          }
+          onClickHandler={() => {
+            setFlippedCards([...flippedCards, { ...character }]);
+            character.open = true;
+          }}
           character={character}
         />
       ))}

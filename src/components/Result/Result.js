@@ -9,9 +9,7 @@ function Result(props) {
       You have <span className="score">{location.state.score}</span> cuffs left{" "}
       <span className="name">{location.state.name.name}</span>!
       <p>Is this your best?</p>
-      <Link to={{ pathname: "/game", name: location.state.name.name }}>
-        Try it again!
-      </Link>
+      <Link to={{ pathname: "/home" }}>Try it again!</Link>
     </div>
   );
 }

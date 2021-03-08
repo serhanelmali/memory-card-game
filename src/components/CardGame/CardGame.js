@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
+import { withRouter, Redirect, useHistory } from "react-router-dom";
 import Card from "../Card/Card";
+import Result from "./../Result/Result";
 import "./CardGame.scss";
 
 import { shuffle } from "lodash";
@@ -35,10 +37,16 @@ function CardGame() {
   const [shuffledCards, setShuffledCards] = useState([]);
   const [matchedCards, setMatchedCards] = useState([]);
   const [flippedCards, setFlippedCards] = useState([]);
-  const [score, setScore] = useState([20]);
+  const [score, setScore] = useState([15]);
+  const history = useHistory();
 
+  //Shuffles Cards.
   useEffect(() => setShuffledCards(shuffle(cards)), []);
 
+  //Transfers flippedCards to matchedCards if they matches,
+  //if they don't then their open condition turns to false,
+  //so that add closed class to the shuffledCard's item by finding it from it's id,
+  //and changes score by minus 1
   useEffect(() => {
     if (flippedCards.length > 1) {
       if (flippedCards[0].name === flippedCards[1].name) {
@@ -61,7 +69,19 @@ function CardGame() {
     }
   }, [flippedCards]);
 
-  useEffect(() => {}, [score]);
+  //Controls score to finish game
+
+  useEffect(() => {
+    if (score === 0) {
+      history.push("/result");
+    }
+  }, [score]);
+
+  useEffect(() => {
+    if (matchedCards.length === 16) {
+      history.push("/result");
+    }
+  }, [matchedCards]);
 
   return (
     <div className="card-container">
@@ -79,4 +99,4 @@ function CardGame() {
   );
 }
 
-export default CardGame;
+export default withRouter(CardGame);

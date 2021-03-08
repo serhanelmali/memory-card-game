@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Card from "../Card/Card";
-import { Redirect, useHistory } from "react-router-dom";
+import { Redirect, useHistory, useLocation } from "react-router-dom";
+
 import "./CardGame.scss";
 
 import { shuffle } from "lodash";
@@ -38,7 +39,8 @@ function CardGame() {
   const [shuffledCards, setShuffledCards] = useState([]);
   const [matchedCards, setMatchedCards] = useState([]);
   const [flippedCards, setFlippedCards] = useState([]);
-  const [score, setScore] = useState([20]);
+  const [score, setScore] = useState([1]);
+  const location = useLocation();
 
   //Shuffles Cards.
   useEffect(() => setShuffledCards(shuffle(cards)), []);
@@ -69,29 +71,23 @@ function CardGame() {
     }
   }, [flippedCards]);
 
-  //Controls score to finish game
-
-  // if (this.state.matchedCards.length === 16 || this.state.score === 0) {
-  //   const newTo = {
-  //     pathname: "",
-  //     userName: this.props.location.userName,
-  //     score: this.state.score,
-  //   };
-  //   this.state.matchedCards.length === 16
-  //     ? (newTo.pathname = "/result")
-  //     : (newTo.pathname = "/result");
-  //   return <Redirect to={newTo} />;
-  // }
+  //Gets us to result page by checking score and matchedCards count also sends data to that pages.
 
   useEffect(() => {
     if (score === 0) {
-      return history.push({ pathname: "/result", state: { score: score } });
+      return history.push({
+        pathname: "/result",
+        state: { score: score, name: location.name },
+      });
     }
   }, [score]);
 
   useEffect(() => {
     if (matchedCards.length === 16) {
-      return history.push({ pathname: "/result", state: { score: score } });
+      return history.push({
+        pathname: "/result",
+        state: { score: score, name: location.name },
+      });
     }
   }, [matchedCards]);
 

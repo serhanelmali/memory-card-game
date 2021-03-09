@@ -94,7 +94,7 @@ function CardGame() {
   return (
     <div>
       <div className="container">
-        <p className="score">{score}</p>
+        <p className="score">You have {score} cuffs left!</p>
         <div className="card-container">
           {shuffledCards.map((character, index) => (
             <Card

@@ -7,7 +7,7 @@ function Result(props) {
   return (
     <div>
       You have <span className="score">{location.state.score}</span> cuffs left{" "}
-      <span className="name">{location.state.name.name}</span>!
+      <span className="name">{location.state.name}</span>!
       <p>Is this your best?</p>
       <Link to={{ pathname: "/home" }}>Try it again!</Link>
     </div>

@@ -6,14 +6,15 @@ function Home() {
   const [name, setName] = useState("");
   return (
     <div className="general">
+      <div className="blur"></div>
       <div className="home-container">
-        {/* {name !== "" ? <p>{name}</p> : ""} */}
+        {name !== "" ? <p className="userName">Officer {name}</p> : ""}
         <input
-          onChange={(event) => setName({ name: event.target.value })}
+          onChange={(event) => setName(event.target.value)}
           placeholder="Type your name"
         />
         <Link to={{ pathname: "/game", name: name }}>
-          <p className="play-click">Find shooter!!</p>
+          <p className="play-click">Arrest them all!</p>
         </Link>
       </div>
     </div>

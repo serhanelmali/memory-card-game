@@ -92,18 +92,22 @@ function CardGame() {
   }, [matchedCards]);
 
   return (
-    <div className="card-container">
-      <p>{score}</p>
-      {shuffledCards.map((character, index) => (
-        <Card
-          key={index}
-          onClickHandler={() => {
-            setFlippedCards([...flippedCards, { ...character }]);
-            character.open = true;
-          }}
-          character={character}
-        />
-      ))}
+    <div>
+      <div className="container">
+        <p className="score">{score}</p>
+        <div className="card-container">
+          {shuffledCards.map((character, index) => (
+            <Card
+              key={index}
+              onClickHandler={() => {
+                setFlippedCards([...flippedCards, { ...character }]);
+                character.open = true;
+              }}
+              character={character}
+            />
+          ))}
+        </div>
+      </div>
     </div>
   );
 }

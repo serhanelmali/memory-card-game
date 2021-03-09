@@ -1,6 +1,52 @@
-.card-container {
-  width: 500px;
-  height: 500px;
+.container {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: url("./../../assets/southpark.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  .score {
+    z-index: 2;
+    position: relative;
+    font-family: "DotGothic16", sans-serif;
+    font-weight: 600;
+    font-size: 36px;
+    color: white;
+    margin-bottom: -15px;
+    letter-spacing: 1px;
+  }
+
+  .card-container {
+    height: 40em;
+    width: 40em;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    justify-items: center;
+    align-self: center;
+    background: rgba(12, 12, 12, 0.1);
+    box-shadow: 0 8px 32px 0 rgb(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(2px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    animation-name: entrance;
+    animation-duration: 2s;
+    transition-timing-function: ease-in-out;
+    overflow: hidden;
+    margin: auto;
+    @keyframes entrance {
+      from {
+        width: 0em;
+      }
+      to {
+        width: 40em;
+      }
+    }
+  }
 }

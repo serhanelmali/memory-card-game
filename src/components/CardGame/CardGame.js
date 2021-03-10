@@ -49,10 +49,19 @@ function CardGame() {
   //if they don't then their open condition turns to false,
   //so that add closed class to the shuffledCard's item by finding it from it's id,
   //and changes score by minus 1
+
   useEffect(() => {
     if (flippedCards.length > 1 && flippedCards.length < 3) {
+      let matches = matchedCards;
       if (flippedCards[0].name === flippedCards[1].name) {
         setMatchedCards([...matchedCards, flippedCards[0], flippedCards[1]]);
+        let transferCards = shuffledCards;
+        transferCards.find(
+          (item) => item.id === flippedCards[0].id
+        ).isMatched = true;
+        transferCards.find(
+          (item) => item.id === flippedCards[1].id
+        ).isMatched = true;
       } else {
         setTimeout(() => {
           let transferCards = shuffledCards;

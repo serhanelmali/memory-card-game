@@ -55,10 +55,10 @@
     margin: auto;
     @keyframes entrance {
       from {
-        width: 0em;
+        transform: scaleY(0);
       }
       to {
-        width: 40em;
+        transform: scaleY(1);
       }
     }
   }

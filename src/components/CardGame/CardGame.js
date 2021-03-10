@@ -53,7 +53,12 @@ function CardGame() {
   useEffect(() => {
     if (flippedCards.length > 1 && flippedCards.length < 3) {
       let matches = matchedCards;
-      if (flippedCards[0].name === flippedCards[1].name) {
+      console.log(matches);
+      if (
+        flippedCards[0].name === flippedCards[1].name &&
+        flippedCards[0].id !== flippedCards[1].id &&
+        !matches.includes(flippedCards[0].name || flippedCards[1].name)
+      ) {
         setMatchedCards([...matchedCards, flippedCards[0], flippedCards[1]]);
         let transferCards = shuffledCards;
         transferCards.find(
@@ -62,7 +67,7 @@ function CardGame() {
         transferCards.find(
           (item) => item.id === flippedCards[1].id
         ).isMatched = true;
-      } else {
+      } else if (flippedCards[0].id !== flippedCards[1].id) {
         setTimeout(() => {
           let transferCards = shuffledCards;
           transferCards.find(

@@ -39,7 +39,7 @@ function CardGame() {
   const [shuffledCards, setShuffledCards] = useState([]);
   const [matchedCards, setMatchedCards] = useState([]);
   const [flippedCards, setFlippedCards] = useState([]);
-  const [score, setScore] = useState([20]);
+  const [score, setScore] = useState([15]);
   const location = useLocation();
 
   //Shuffles Cards.
@@ -50,7 +50,7 @@ function CardGame() {
   //so that add closed class to the shuffledCard's item by finding it from it's id,
   //and changes score by minus 1
   useEffect(() => {
-    if (flippedCards.length > 1) {
+    if (flippedCards.length > 1 && flippedCards.length < 3) {
       if (flippedCards[0].name === flippedCards[1].name) {
         setMatchedCards([...matchedCards, flippedCards[0], flippedCards[1]]);
       } else {
@@ -67,7 +67,7 @@ function CardGame() {
       }
       setTimeout(() => {
         setFlippedCards([]);
-      }, 1000);
+      }, 500);
     }
   }, [flippedCards]);
 
@@ -100,8 +100,10 @@ function CardGame() {
             <Card
               key={index}
               onClickHandler={() => {
-                setFlippedCards([...flippedCards, { ...character }]);
-                character.open = true;
+                if (flippedCards.length < 2) {
+                  setFlippedCards([...flippedCards, { ...character }]);
+                  character.open = true;
+                }
               }}
               character={character}
             />

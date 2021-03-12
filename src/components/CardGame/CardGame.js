@@ -39,8 +39,9 @@ function CardGame() {
   const [shuffledCards, setShuffledCards] = useState([]);
   const [matchedCards, setMatchedCards] = useState([]);
   const [flippedCards, setFlippedCards] = useState([]);
-  const [score, setScore] = useState([15]);
+  const [score, setScore] = useState([10]);
   const location = useLocation();
+  const [chars, setChars] = useState([]);
 
   //Shuffles Cards.
   useEffect(() => setShuffledCards(shuffle(cards)), []);
@@ -53,7 +54,6 @@ function CardGame() {
   useEffect(() => {
     if (flippedCards.length > 1 && flippedCards.length < 3) {
       let matches = matchedCards;
-      console.log(matches);
       if (
         flippedCards[0].name === flippedCards[1].name &&
         flippedCards[0].id !== flippedCards[1].id &&
@@ -63,11 +63,17 @@ function CardGame() {
         let transferCards = shuffledCards;
         transferCards.find(
           (item) => item.id === flippedCards[0].id
+        ).open = true;
+        transferCards.find(
+          (item) => item.id === flippedCards[1].id
+        ).open = true;
+        transferCards.find(
+          (item) => item.id === flippedCards[0].id
         ).isMatched = true;
         transferCards.find(
           (item) => item.id === flippedCards[1].id
         ).isMatched = true;
-      } else if (flippedCards[0].id !== flippedCards[1].id) {
+      } else if (flippedCards[0].name !== flippedCards[1].name) {
         setTimeout(() => {
           let transferCards = shuffledCards;
           transferCards.find(

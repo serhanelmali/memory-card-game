@@ -1,11 +1,12 @@
 import React from "react";
+import "./Result.scss";
 import { useLocation, Link } from "react-router-dom";
 
 function Result(props) {
   const location = useLocation();
 
   return (
-    <div>
+    <div className="result__container">
       {location.state.score > 0 ? (
         <p className="win__quote">
           You did it! Everyone respects your autoritah.
@@ -17,9 +18,7 @@ function Result(props) {
       ) : (
         <p>You're out off cuffs {location.state.name}!</p>
       )}
-      {/* You have <span className="score">{location.state.score}</span> cuffs left{" "}
-      <span className="name">{location.state.name}</span>!
-      <p>Is this your best?</p> */}
+
       <Link to={{ pathname: "/home" }}>Try it again!</Link>
     </div>
   );

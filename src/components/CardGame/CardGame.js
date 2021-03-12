@@ -54,6 +54,7 @@ function CardGame() {
   useEffect(() => {
     if (flippedCards.length > 1 && flippedCards.length < 3) {
       let matches = matchedCards;
+
       if (
         flippedCards[0].name === flippedCards[1].name &&
         flippedCards[0].id !== flippedCards[1].id &&
@@ -111,6 +112,18 @@ function CardGame() {
     }
   }, [matchedCards]);
 
+  useEffect(() => {
+    let transferCards = shuffledCards;
+    if (matchedCards.length > 0 && transferCards) {
+      transferCards.find(
+        (item) => item.id === matchedCards[matchedCards.length - 2].id
+      ).open = true;
+      transferCards.find(
+        (item) => item.id === matchedCards[matchedCards.length - 1].id
+      ).open = true;
+    }
+  }, [matchedCards]);
+
   return (
     <div>
       <div className="container">
@@ -120,7 +133,11 @@ function CardGame() {
             <Card
               key={index}
               onClickHandler={() => {
-                if (flippedCards.length < 2) {
+                if (
+                  flippedCards.length < 2 &&
+                  !character.isMatched &&
+                  !character.open
+                ) {
                   setFlippedCards([...flippedCards, { ...character }]);
                   character.open = true;
                 }

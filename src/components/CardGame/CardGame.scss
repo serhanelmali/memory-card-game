@@ -38,6 +38,7 @@
     width: 40em;
     padding: 20px;
     display: grid;
+    position: relative;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     justify-items: center;
@@ -62,6 +63,30 @@
         transform: scaleY(1);
         opacity: 1;
       }
+    }
+  }
+
+  @media screen and (max-width: 360px) {
+    .card-container {
+      height: 16em;
+      width: 16em;
+      margin: auto;
+    }
+
+    .score {
+      font-size: 20px;
+      top: 7%;
+    }
+  }
+  @media screen and (min-width: 360px) and (max-width: 720px) {
+    .score {
+      font-size: 20px;
+      top: 6%;
+    }
+    .card-container {
+      height: 20em;
+      width: 20em;
+      margin: auto;
     }
   }
 }

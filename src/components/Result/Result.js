@@ -16,7 +16,9 @@ function Result(props) {
           </p>
         </p>
       ) : (
-        <p>You're out off cuffs {location.state.name}!</p>
+        <p className="lose__quote">
+          You're out off cuffs {location.state.name}!
+        </p>
       )}
 
       <Link to={{ pathname: "/home" }}>Try it again!</Link>

@@ -2,8 +2,10 @@
   padding: 1px;
   display: flex;
   justify-content: center;
+  position: relative;
   width: 150px;
   height: 150px;
+  margin: 1px;
   background: rgba(0, 0, 0, 0.35);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(4px);
@@ -16,20 +18,12 @@
   &:active {
     cursor: grabbing;
   }
-
-  img.card-open {
-    width: auto;
-    height: 150px;
-  }
-  img.card-closed {
-    width: auto;
-    height: auto;
-  }
 }
 
 .card-matched {
   padding: 1px;
   display: flex;
+  position: relative;
   justify-content: center;
   width: 150px;
   height: 150px;
@@ -72,4 +66,41 @@
   transform: rotateY(-180deg);
   transform-style: preserve-3d;
   transition: 0.8s;
+}
+
+@media screen and (max-width: 360px) {
+  .card {
+    width: 60px;
+    height: 60px;
+    right: 4px;
+    bottom: 2px;
+  }
+  .card-matched {
+    width: 60px;
+    height: 60px;
+    right: 4px;
+    bottom: 2px;
+  }
+}
+@media screen and (min-width: 360px) and (max-width: 720px) {
+  .card-matched {
+    width: 80px;
+    height: 80px;
+    right: 12px;
+    bottom: 10px;
+  }
+  .card {
+    width: 80px;
+    height: 80px;
+    right: 12px;
+    bottom: 10px;
+  }
+  img.card-open {
+    width: auto;
+    height: 80px;
+  }
+  img.card-closed {
+    width: auto;
+    height: 80px;
+  }
 }

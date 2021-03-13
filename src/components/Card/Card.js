@@ -5,6 +5,7 @@ import "./card.scss";
 
 function Card({ character, onClickHandler, flippedCards }) {
   return (
+    // <div className={character.isMatched ? "card-matched" : "card"}>
     <div className={character.isMatched ? "card-matched" : "card"}>
       <img
         className={!character.open ? "card-closed" : "card-open"}

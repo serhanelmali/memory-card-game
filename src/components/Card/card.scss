@@ -12,6 +12,8 @@
   border: 1px solid rgba(255, 255, 255, 0.18);
   cursor: grab;
   transition: background 5s;
+  transform: rotateY(180deg);
+  transform-style: preserve-3d;
 
   &:active {
     cursor: grabbing;
@@ -41,4 +43,15 @@
   border: 1px solid rgba(255, 255, 255, 0.18);
   cursor: grab;
   transition: background 3s;
+}
+.card-open {
+  transform: rotateY(180deg);
+  transform-style: preserve-3d;
+  transition: 0.8s;
+}
+
+.card-closed {
+  transform: rotateY(-180deg);
+  transform-style: preserve-3d;
+  transition: 0.8s;
 }

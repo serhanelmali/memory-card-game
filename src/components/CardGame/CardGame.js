@@ -4,7 +4,7 @@ import { Redirect, useHistory, useLocation } from "react-router-dom";
 
 import "./CardGame.scss";
 
-import { shuffle } from "lodash";
+import { get, shuffle } from "lodash";
 
 import cartman from "./../../assets/cartman.png";
 import clyde from "./../../assets/clyde.png";
@@ -39,7 +39,7 @@ function CardGame() {
   const [shuffledCards, setShuffledCards] = useState([]);
   const [matchedCards, setMatchedCards] = useState([]);
   const [flippedCards, setFlippedCards] = useState([]);
-  const [score, setScore] = useState([10]);
+  const [score, setScore] = useState([8]);
   const location = useLocation();
   const [chars, setChars] = useState([]);
 
@@ -88,7 +88,7 @@ function CardGame() {
       }
       setTimeout(() => {
         setFlippedCards([]);
-      }, 500);
+      }, 800);
     }
   }, [flippedCards]);
 

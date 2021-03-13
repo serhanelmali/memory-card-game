@@ -1,30 +1,30 @@
 {
   "files": {
-    "main.css": "/memory-card-game/static/css/main.a658215a.chunk.css",
-    "main.js": "/memory-card-game/static/js/main.99065cfe.chunk.js",
-    "main.js.map": "/memory-card-game/static/js/main.99065cfe.chunk.js.map",
+    "main.css": "/memory-card-game/static/css/main.297b0aa6.chunk.css",
+    "main.js": "/memory-card-game/static/js/main.dc333d7e.chunk.js",
+    "main.js.map": "/memory-card-game/static/js/main.dc333d7e.chunk.js.map",
     "runtime-main.js": "/memory-card-game/static/js/runtime-main.786bcf53.js",
     "runtime-main.js.map": "/memory-card-game/static/js/runtime-main.786bcf53.js.map",
     "static/js/2.8d116775.chunk.js": "/memory-card-game/static/js/2.8d116775.chunk.js",
     "static/js/2.8d116775.chunk.js.map": "/memory-card-game/static/js/2.8d116775.chunk.js.map",
     "index.html": "/memory-card-game/index.html",
-    "static/css/main.a658215a.chunk.css.map": "/memory-card-game/static/css/main.a658215a.chunk.css.map",
+    "static/css/main.297b0aa6.chunk.css.map": "/memory-card-game/static/css/main.297b0aa6.chunk.css.map",
     "static/js/2.8d116775.chunk.js.LICENSE.txt": "/memory-card-game/static/js/2.8d116775.chunk.js.LICENSE.txt",
-    "static/media/cartman.86d79149.png": "/memory-card-game/static/media/cartman.86d79149.png",
-    "static/media/clyde.79189a63.png": "/memory-card-game/static/media/clyde.79189a63.png",
-    "static/media/jimmy.e7718244.png": "/memory-card-game/static/media/jimmy.e7718244.png",
-    "static/media/kenny.27de24f0.png": "/memory-card-game/static/media/kenny.27de24f0.png",
-    "static/media/kyle.96fc681f.png": "/memory-card-game/static/media/kyle.96fc681f.png",
-    "static/media/officer.8801496c.png": "/memory-card-game/static/media/officer.8801496c.png",
-    "static/media/home.scss": "/memory-card-game/static/media/school.6f418b7e.png",
-    "static/media/Result.scss": "/memory-card-game/static/media/southpark.7a6fa397.png",
-    "static/media/thad.c8da5b80.png": "/memory-card-game/static/media/thad.c8da5b80.png",
-    "static/media/tweek.592289db.png": "/memory-card-game/static/media/tweek.592289db.png"
+    "static/media/cartman.d0d2f9e5.png": "/memory-card-game/static/media/cartman.d0d2f9e5.png",
+    "static/media/clyde.e376a804.png": "/memory-card-game/static/media/clyde.e376a804.png",
+    "static/media/jimmy.60f4ab68.png": "/memory-card-game/static/media/jimmy.60f4ab68.png",
+    "static/media/kenny.15a0e866.png": "/memory-card-game/static/media/kenny.15a0e866.png",
+    "static/media/kyle.5b7eae31.png": "/memory-card-game/static/media/kyle.5b7eae31.png",
+    "static/media/officer.b12ee3fc.png": "/memory-card-game/static/media/officer.b12ee3fc.png",
+    "static/media/home.scss": "/memory-card-game/static/media/school.c3956869.png",
+    "static/media/Result.scss": "/memory-card-game/static/media/southpark.c89f7bcd.png",
+    "static/media/thad.4de357d8.png": "/memory-card-game/static/media/thad.4de357d8.png",
+    "static/media/tweek.a34bc510.png": "/memory-card-game/static/media/tweek.a34bc510.png"
   },
   "entrypoints": [
     "static/js/runtime-main.786bcf53.js",
     "static/js/2.8d116775.chunk.js",
-    "static/css/main.a658215a.chunk.css",
-    "static/js/main.99065cfe.chunk.js"
+    "static/css/main.297b0aa6.chunk.css",
+    "static/js/main.dc333d7e.chunk.js"
   ]
 }

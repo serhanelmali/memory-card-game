@@ -1,23 +1,32 @@
 .card {
   padding: 1px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   position: relative;
   width: 150px;
   height: 150px;
   margin: 1px;
   background: rgba(0, 0, 0, 0.35);
+  -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
+  cursor: -webkit-grab;
   cursor: grab;
+  -webkit-transition: background 5s;
+  -o-transition: background 5s;
   transition: background 5s;
   right: 4px;
   bottom: 4px;
 
   &:active {
+    cursor: -webkit-grabbing;
     cursor: grabbing;
   }
 }
@@ -35,49 +44,99 @@ img.card-closed {
 
 .card-matched {
   padding: 1px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   position: relative;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   width: 150px;
   height: 150px;
   background: rgba(255, 255, 255, 0.9);
+  -webkit-box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.37);
   box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.37);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
+  cursor: -webkit-grab;
   cursor: grab;
+  -webkit-transition: background, -webkit-filter 3s;
+  transition: background, -webkit-filter 3s;
+  -o-transition: background, filter 3s;
   transition: background, filter 3s;
+  transition: background, filter 3s, -webkit-filter 3s;
+  -webkit-animation-name: blured;
   animation-name: blured;
+  -webkit-animation-duration: 1s;
   animation-duration: 1s;
+  right: 4px;
+  bottom: 3px;
+}
+
+@-webkit-keyframes blured {
+  0% {
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+  }
+  25% {
+    -webkit-filter: blur(1px);
+    filter: blur(1px);
+  }
+  50% {
+    -webkit-filter: blur(2px);
+    filter: blur(2px);
+  }
+  75% {
+    -webkit-filter: blur(1px);
+    filter: blur(1px);
+  }
+  100% {
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+  }
 }
 
 @keyframes blured {
   0% {
+    -webkit-filter: blur(0px);
     filter: blur(0px);
   }
   25% {
+    -webkit-filter: blur(1px);
     filter: blur(1px);
   }
   50% {
+    -webkit-filter: blur(2px);
     filter: blur(2px);
   }
   75% {
+    -webkit-filter: blur(1px);
     filter: blur(1px);
   }
   100% {
+    -webkit-filter: blur(0px);
     filter: blur(0px);
   }
 }
 .card-open {
+  -webkit-transform: rotateY(180deg);
   transform: rotateY(180deg);
+  -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
+  -webkit-transition: 0.8s;
+  -o-transition: 0.8s;
   transition: 0.8s;
 }
 
 .card-closed {
+  -webkit-transform: rotateY(-180deg);
   transform: rotateY(-180deg);
+  -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
+  -webkit-transition: 0.8s;
+  -o-transition: 0.8s;
   transition: 0.8s;
 }
 
@@ -90,17 +149,17 @@ img.card-closed {
   }
   .card-matched {
     width: 60px;
-    height: 60px;
-    right: 4px;
-    bottom: 2px;
+    height: 58px;
+    right: 17px;
+    bottom: 13px;
   }
 }
 @media screen and (min-width: 360px) and (max-width: 720px) {
   .card-matched {
-    width: 80px;
-    height: 80px;
-    right: 12px;
-    bottom: 10px;
+    width: 75px;
+    height: 75px;
+    right: 15px;
+    bottom: 14px;
   }
   .card {
     width: 75px;

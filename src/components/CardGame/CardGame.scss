@@ -1,7 +1,16 @@
 .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   height: 100vh;
   background: url("./../../assets/southpark.png");
@@ -18,8 +27,21 @@
     color: white;
     margin-bottom: -15px;
     letter-spacing: 1px;
+    -webkit-animation-name: reveal;
     animation-name: reveal;
+    -webkit-animation-duration: 3s;
     animation-duration: 3s;
+
+    @-webkit-keyframes reveal {
+      from {
+        opacity: 0;
+        top: -50px;
+      }
+      to {
+        opacity: 1;
+        top: 0px;
+      }
+    }
 
     @keyframes reveal {
       from {
@@ -37,33 +59,116 @@
     height: 40em;
     width: 40em;
     padding: 20px;
+    display: -ms-grid;
     display: grid;
     position: relative;
+    -ms-grid-columns: 1fr 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    -ms-grid-rows: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     justify-items: center;
+    -ms-grid-row-align: center;
     align-self: center;
     background: rgba(12, 12, 12, 0.1);
+    -webkit-box-shadow: 0 8px 32px 0 rgb(0, 0, 0, 0.8);
     box-shadow: 0 8px 32px 0 rgb(0, 0, 0, 0.8);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(2px);
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.18);
+    -webkit-animation-name: entrance;
     animation-name: entrance;
+    -webkit-animation-duration: 1s;
     animation-duration: 1s;
+    -webkit-transition-timing-function: cubic-bezier(0.38, 1.22, 1, -0.26);
+    -o-transition-timing-function: cubic-bezier(0.38, 1.22, 1, -0.26);
     transition-timing-function: cubic-bezier(0.38, 1.22, 1, -0.26);
     overflow: hidden;
     margin: auto;
-    @keyframes entrance {
+    @-webkit-keyframes entrance {
       from {
+        -webkit-transform: scaleY(0);
         transform: scaleY(0);
         opacity: 0;
       }
       to {
+        -webkit-transform: scaleY(1);
         transform: scaleY(1);
         opacity: 1;
       }
     }
+    @keyframes entrance {
+      from {
+        -webkit-transform: scaleY(0);
+        transform: scaleY(0);
+        opacity: 0;
+      }
+      to {
+        -webkit-transform: scaleY(1);
+        transform: scaleY(1);
+        opacity: 1;
+      }
+    }
+  }
+
+  .card-container > *:nth-child(1) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+  }
+
+  .card-container > *:nth-child(2) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+  }
+
+  .card-container > *:nth-child(3) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+  }
+
+  .card-container > *:nth-child(4) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 4;
+  }
+
+  .card-container > *:nth-child(5) {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+  }
+
+  .card-container > *:nth-child(6) {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+  }
+
+  .card-container > *:nth-child(7) {
+    -ms-grid-row: 2;
+    -ms-grid-column: 3;
+  }
+
+  .card-container > *:nth-child(8) {
+    -ms-grid-row: 2;
+    -ms-grid-column: 4;
+  }
+
+  .card-container > *:nth-child(9) {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+  }
+
+  .card-container > *:nth-child(10) {
+    -ms-grid-row: 3;
+    -ms-grid-column: 2;
+  }
+
+  .card-container > *:nth-child(11) {
+    -ms-grid-row: 3;
+    -ms-grid-column: 3;
+  }
+
+  .card-container > *:nth-child(12) {
+    -ms-grid-row: 3;
+    -ms-grid-column: 4;
   }
 
   @media screen and (max-width: 360px) {

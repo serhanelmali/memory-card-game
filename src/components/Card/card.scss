@@ -14,10 +14,23 @@
   border: 1px solid rgba(255, 255, 255, 0.18);
   cursor: grab;
   transition: background 5s;
+  right: 4px;
+  bottom: 4px;
 
   &:active {
     cursor: grabbing;
   }
+}
+
+img.card-open {
+  width: 70%;
+  display: block;
+  margin: 0 auto;
+}
+img.card-closed {
+  width: 60%;
+  display: block;
+  margin: 0 auto;
 }
 
 .card-matched {
@@ -72,8 +85,8 @@
   .card {
     width: 60px;
     height: 60px;
-    right: 4px;
-    bottom: 2px;
+    right: 17px;
+    bottom: 15px;
   }
   .card-matched {
     width: 60px;
@@ -90,17 +103,21 @@
     bottom: 10px;
   }
   .card {
-    width: 80px;
-    height: 80px;
-    right: 12px;
-    bottom: 10px;
+    width: 75px;
+    height: 75px;
+    right: 15px;
+    bottom: 15px;
   }
   img.card-open {
-    width: auto;
-    height: 80px;
+    width: 60%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
   }
   img.card-closed {
-    width: auto;
-    height: 80px;
+    width: 60%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
   }
 }
